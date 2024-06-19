@@ -3,19 +3,18 @@ from data import *
 # for sheet in sheets in INPUT file
 for sheet in sheets:
      # for row_I in rows_I
-    for row in get_number_of_rows(INPUT_file, sheet):
-    
-        # read_INPUT_row()
+    for row in range(get_number_of_rows(wb_input, sheet)):
+        
         # if Epic <=> if string in C has one "."
             # 	 "Epic" -> B
             # Öffnen Sie die Eingabedatei und lesen Sie den Wert
-            sheet_input = wb_input['Sheet1']
-            value = sheet_input['C1'].value
+            sheet_input = wb_input[sheet]
+            input_value = sheet_input['C' + str(row + 1)].value
 
             # Öffnen Sie die Ausgabedatei und schreiben Sie den Wert
             
-            sheet_output = wb_output['Sheet1']
-            sheet_output['C2'] = value
+            sheet_output = wb_output['Upload_Template']
+            sheet_output['C' + str(row + 1)] = input_value
             # 	 F + " - M" + sheet] -> C
             # 	  "PIP Milestone" + sheet] -> I, K, L
         #  if Deliverable <=> if string in C has one "."

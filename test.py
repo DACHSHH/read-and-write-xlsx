@@ -1,3 +1,6 @@
-string = 'asdfasd.asdfa.'
+string = 'asdfasd.asdfa'
+from functions import *
+print(is_EPIC(string))
 
-print(string.count('.'))
+x ='C' + str(3)
+print(type(x))
