@@ -6,10 +6,11 @@ def get_number_of_rows(file, sheet):
     # Initialize the count
     count = 0
     # Iterate over the rows
-    for row in file[sheet].iter_rows():
+    for row in file[sheet].iter_rows(min_col=3,max_col=3):
         # If the first cell in the row is not empty, increment the count
         if row[0].value is not None:
             count += 1
+            # print(str(sheet) +','+ str(count))
     # Return the count
     return count
 
